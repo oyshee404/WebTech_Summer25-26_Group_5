@@ -1,0 +1,927 @@
+/**{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background:#f5f7fa;
+    color:#263238;
+    line-height:1.5;
+}
+
+.header{
+    background:#17212b;
+    padding:24px 20px;
+    text-align:center;
+    border-bottom:4px solid #2e7d5b;
+}
+
+.header h1{
+    color:#ffffff;
+    font-size:30px;
+    letter-spacing:.4px;
+}
+
+.topnav{
+    background:#ffffff;
+    border-bottom:1px solid #dfe5ea;
+    min-height:54px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(23,33,43,.05);
+}
+
+.topnav a{
+    float:left;
+    display:block;
+    color:#455a64;
+    text-align:center;
+    padding:16px 20px;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.topnav a:hover{
+    background:#eef6f2;
+    color:#2e7d5b;
+}
+
+.topnav .right{
+    float:right;
+    color:#b42318;
+}
+
+.topnav .right:hover{
+    background:#fff1f0;
+    color:#8f1d14;
+}
+
+.container,
+.dashboard-container{
+    width:calc(100% - 40px);
+    max-width:1050px;
+    margin:34px auto;
+    background:#ffffff;
+    padding:32px;
+    border:1px solid #e2e8ed;
+    border-radius:14px;
+    box-shadow:0 8px 24px rgba(23,33,43,.07);
+}
+
+.dashboard-container{
+    max-width:1150px;
+}
+
+fieldset{
+    border:1px solid #dce3e8;
+    border-radius:11px;
+    padding:22px;
+    margin-bottom:22px;
+    background:#ffffff;
+}
+
+legend{
+    padding:0 10px;
+    color:#2e7d5b;
+    font-weight:bold;
+    font-size:21px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    padding:10px 8px;
+    vertical-align:middle;
+}
+
+td:first-child{
+    color:#37474f;
+    font-weight:600;
+}
+
+label{
+    display:inline-block;
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select,
+textarea{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid #cfd8dc;
+    border-radius:7px;
+    background:#ffffff;
+    color:#263238;
+    font-size:15px;
+    font-family:inherit;
+    transition:.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#2e7d5b;
+    box-shadow:0 0 0 3px rgba(46,125,91,.10);
+}
+
+textarea{
+    resize:none;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+    cursor:pointer;
+    accent-color:#2e7d5b;
+    vertical-align:middle;
+}
+
+.button,
+input[type="submit"],
+input[type="reset"]{
+    display:inline-block;
+    border:1px solid #2e7d5b;
+    border-radius:7px;
+    padding:10px 18px;
+    margin:4px;
+    background:#2e7d5b;
+    color:#ffffff;
+    font-family:inherit;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.button:hover,
+input[type="submit"]:hover{
+    background:#256548;
+    border-color:#256548;
+    transform:translateY(-1px);
+}
+
+input[type="reset"],
+.button-secondary{
+    background:#607d8b;
+    border-color:#607d8b;
+}
+
+input[type="reset"]:hover,
+.button-secondary:hover{
+    background:#4f6873;
+    border-color:#4f6873;
+}
+
+.button-danger{
+    background:#c0392b;
+    border-color:#c0392b;
+}
+
+.button-danger:hover{
+    background:#a93226;
+    border-color:#a93226;
+}
+
+.dashboard-title{
+    padding-bottom:18px;
+    margin-bottom:24px;
+    border-bottom:1px solid #e5eaee;
+}
+
+.dashboard-title h2{
+    color:#17212b;
+    font-size:25px;
+    margin-bottom:4px;
+}
+
+.dashboard-title p{
+    color:#71808a;
+    font-size:15px;
+}
+
+.info{
+    background:#f1f7f4;
+    border-left:4px solid #2e7d5b;
+    color:#42515a;
+    padding:13px 15px;
+    margin-bottom:24px;
+    border-radius:5px;
+}
+
+.card-table{
+    border-collapse:separate;
+    border-spacing:12px;
+    margin:0 -12px 18px;
+}
+
+.card-table td{
+    width:33.33%;
+    padding:0;
+}
+
+.card{
+    background:#ffffff;
+    border:1px solid #e0e6ea;
+    border-top:3px solid #2e7d5b;
+    border-radius:10px;
+    padding:20px 15px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(23,33,43,.05);
+}
+
+.card h3{
+    color:#607d8b;
+    font-size:15px;
+    margin-bottom:7px;
+}
+
+.card .number{
+    color:#17212b;
+    font-size:27px;
+    font-weight:bold;
+}
+
+.card p{
+    color:#8a989f;
+    font-size:13px;
+}
+
+.menu-table td{
+    width:50%;
+}
+
+.menu-card{
+    border:1px solid #e0e6ea;
+    border-radius:9px;
+    padding:18px;
+    background:#fafcfd;
+    text-align:center;
+}
+
+.menu-card h3{
+    color:#2e7d5b;
+    margin-bottom:7px;
+}
+
+.status{
+    display:inline-block;
+    padding:4px 11px;
+    border-radius:12px;
+    background:#eaf6ef;
+    color:#28704f;
+    font-size:13px;
+    font-weight:bold;
+}
+
+table[border="1"]{
+    border:1px solid #dfe5e9;
+}
+
+table[border="1"] td{
+    border:1px solid #dfe5e9;
+    padding:11px;
+}
+
+table[border="1"] tr:first-child{
+    background:#f1f5f7;
+}
+
+table[border="1"] tr:first-child td{
+    color:#37474f;
+}
+
+.center{
+    text-align:center;
+}
+
+.error{
+    color:#c0392b;
+    font-size:14px;
+}
+
+.footer{
+    background:#17212b;
+    padding:22px;
+    margin-top:45px;
+    text-align:center;
+}
+
+.footer label{
+    color:#cbd5da;
+    font-size:14px;
+}
+
+@media(max-width:700px){
+    .topnav a,
+    .topnav .right{
+        float:none;
+        display:block;
+        text-align:left;
+    }
+
+    .container,
+    .dashboard-container{
+        width:calc(100% - 24px);
+        margin:18px auto;
+        padding:20px;
+    }
+
+    .card-table{
+        display:block;
+        margin:0;
+    }
+
+    .card-table tr,
+    .card-table td{
+        display:block;
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    td{
+        display:block;
+        width:100% !important;
+    }
+}*/
+
+
+
+
+
+
+/* =========================================
+   GYM MANAGEMENT SYSTEM
+   Modern Black / White / Orange Design
+========================================= */
+
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background:#f4f4f4;
+    color:#ece9e9;
+    line-height:1.5;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header{
+    background:#364249;
+    padding:28px 20px;
+    text-align:center;
+    border-bottom:5px solid #234e77;
+}
+
+.header h1{
+    color:#ffffff;
+    font-size:32px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.header p{
+    color:#bbbbbb;
+    font-size:15px;
+    margin-top:5px;
+}
+
+
+/* =========================================
+   NAVIGATION BAR
+========================================= */
+
+.topnav{
+    background:#0f4a5c;
+    overflow:hidden;
+    border-bottom:1px solid #dddddd;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.topnav a{
+    float:left;
+    display:block;
+    color:#e1e8eb;
+    text-align:center;
+    padding:17px 22px;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+.topnav a:hover{
+    background:#e3ecec;
+    color:#1d6d70;
+}
+
+.topnav .right{
+    float:right;
+    color:#cc3737;
+}
+
+.topnav .right:hover{
+    background:#fff0f0;
+    color:#b91c1c;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container,
+.dashboard-container{
+    width:calc(100% - 40px);
+    max-width:1050px;
+    margin:35px auto;
+    padding:32px;
+    background:#334549;
+    border-radius:12px;
+    border:1px solid #dddddd;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.dashboard-container{
+    max-width:1150px;
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+h1,
+h2,
+h3{
+    color:#eceef0;
+}
+
+.dashboard-title{
+    padding-bottom:18px;
+    margin-bottom:25px;
+    border-bottom:2px solid #fcf8f8;
+}
+
+.dashboard-title h2{
+    font-size:28px;
+    color:#e9eff1;
+}
+
+.dashboard-title p{
+    color:#b5c8c9;
+    font-size:15px;
+}
+
+
+/* =========================================
+   FIELDSET
+========================================= */
+
+fieldset{
+    border:1px solid #296979;
+    border-radius:30px;
+    padding:25px;
+    margin-bottom:20px;
+    background:#fdf9fc;
+}
+
+legend{
+    padding:0 12px;
+    color:#f5f7f8;
+    font-size:21px;
+    font-weight:bold;
+    background:#378096;
+    border:none;
+    border-radius:30px;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    padding:10px 8px;
+    vertical-align:middle;
+}
+
+td:first-child{
+    color:#363636;
+    font-weight:bold;
+}
+
+label{
+    display:inline-block;
+    color:#333333;
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+
+/* =========================================
+   INPUT FIELDS
+========================================= */
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select,
+textarea{
+    width:100%;
+    padding:12px 13px;
+    margin:5px 0;
+    border:1px solid #cccccc;
+    border-radius:7px;
+    background:#ffffff;
+    color:#222222;
+    font-family:inherit;
+    font-size:15px;
+    transition:0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#187f99;
+    box-shadow:0 0 0 3px rgba(255,107,0,0.12);
+}
+
+textarea{
+    resize:none;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+    cursor:pointer;
+    accent-color:#208aaa;
+    vertical-align:middle;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+input[type="submit"],
+input[type="reset"],
+.button{
+    display:inline-block;
+    padding:11px 22px;
+    margin:5px;
+    border:none;
+    border-radius:7px;
+    color:#ffffff;
+    font-family:inherit;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    transition:0.2s;
+}
+
+input[type="submit"],
+.button{
+    background:#384e5a;
+    box-shadow:0 4px 10px rgba(255,107,0,0.20);
+}
+
+input[type="submit"]:hover,
+.button:hover{
+    background:#1a8d96;
+    /*transform:translateY(-2px);*/
+    box-shadow:0 7px 15px rgba(255,107,0,0.25);
+}
+
+input[type="reset"]{
+    background:#555555;
+}
+
+input[type="reset"]:hover{
+    background:#333333;
+    /*transform:translateY(-2px);*/
+}
+
+.button-danger{
+    background:#d62828;
+}
+
+.button-danger:hover{
+    background:#b91c1c;
+}
+
+
+/* =========================================
+   DASHBOARD CARDS
+========================================= */
+
+.card-table{
+    border-collapse:separate;
+    border-spacing:15px;
+    margin:0 -15px 20px;
+}
+
+.card-table td{
+    width:33.33%;
+    padding:0;
+}
+
+.card{
+    position:relative;
+    background:#ffffff;
+    border:1px solid #dddddd;
+    border-radius:10px;
+    padding:23px 18px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(8, 8, 8, 0.07);
+    overflow:hidden;
+    transition:0.2s;
+}
+
+/*.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 22px rgba(0,0,0,0.12);
+}*/
+
+.card:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:#126e8a;
+}
+
+.card h3{
+    color:#777777;
+    font-size:15px;
+    margin-top:7px;
+    margin-bottom:7px;
+}
+
+.card .number{
+    color:#171717;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.card p{
+    color:#999999;
+    font-size:13px;
+}
+
+
+/* =========================================
+   DASHBOARD MENU
+========================================= */
+
+.menu-table{
+    border-collapse:separate;
+    border-spacing:12px;
+}
+
+.menu-table td{
+    width:50%;
+    padding:0;
+}
+
+.menu-card{
+    background:#c5bdc2;
+    border:1px solid #dddddd;
+    border-radius:9px;
+    padding:20px;
+    text-align:center;
+    transition:0.2s;
+}
+
+.menu-card:hover{
+    background:#fff7f0;
+    border-color:#237c97;
+    /*transform:translateY(-3px);*/
+}
+
+.menu-card h3{
+    color:#20808d;
+    margin-bottom:7px;
+}
+
+.menu-card p{
+    color:#777777;
+}
+
+
+/* =========================================
+   INFORMATION BOX
+========================================= */
+
+.info{
+    background:#fff7f0;
+    border-left:5px solid #176e7e;
+    color:#555555;
+    padding:14px 17px;
+    margin-bottom:25px;
+    border-radius:6px;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status{
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:20px;
+    background:#e8f7ee;
+    color:#198754;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.status-warning{
+    background:#fff3cd;
+    color:#997404;
+}
+
+.status-danger{
+    background:#f8d7da;
+    color:#b02a37;
+}
+
+
+/* =========================================
+   DATA TABLES
+========================================= */
+
+table[border="1"]{
+    border:0px solid #dddddd;
+}
+
+table[border="1"] td{
+    border:0px solid #dddddd;
+    padding:12px;
+}
+
+table[border="1"] tr:first-child{
+    background:#305e69;
+}
+
+table[border="1"] tr:first-child td{
+    color:#ffffff;
+    font-weight:bold;
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.error{
+    color:#d62828;
+    font-size:14px;
+    margin-top:3px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer{
+    background:#354242;
+    padding:24px;
+    margin-top:50px;
+    text-align:center;
+    border-top:4px solid #0d6277;
+}
+
+.footer label{
+    color:#bbbbbb;
+    font-size:14px;
+}
+
+
+/* =========================================
+   CENTER
+========================================= */
+
+.center{
+    text-align:center;
+     color:#eeebeb;
+}
+
+
+/* =========================================
+   SMALL LOGIN / REGISTRATION EFFECT
+========================================= */
+
+.container form{
+    width:100%;
+     color:#eeebeb;
+
+}
+
+.container input[type="submit"]{
+    min-width:130px;
+}
+
+.container input[type="reset"]{
+    min-width:130px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+    .header h1{
+        font-size:25px;
+    }
+
+    .topnav a,
+    .topnav .right{
+        float:none;
+        display:block;
+        text-align:left;
+    }
+
+    .container,
+    .dashboard-container{
+        width:calc(100% - 24px);
+        margin:20px auto;
+        padding:20px;
+    }
+
+    .card-table{
+        display:block;
+        margin:0;
+    }
+
+    .card-table tr,
+    .card-table td{
+        display:block;
+        width:100%;
+        margin-bottom:12px;
+    }
+
+    .menu-table{
+        display:block;
+    }
+
+    .menu-table tr,
+    .menu-table td{
+        display:block;
+        width:100%;
+        margin-bottom:12px;
+    }
+
+    td{
+        display:block;
+        width:100% !important;
+    }
+}
